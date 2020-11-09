@@ -3,7 +3,7 @@ import * as basicLightbox from 'basiclightbox';
 import '../../../node_modules/basiclightbox/dist/basicLightbox.min.css';
 import PropTypes from "prop-types";
 
-const ListItem = ({ images}) => {
+const ListItem = ({ images }) => {
     const modal = (e) => {
         e.preventDefault();
 
@@ -22,8 +22,6 @@ const ListItem = ({ images}) => {
                     images.map(card => <li key={card.id}><img src={card.webformatURL} data-src={card.largeImageURL} onClick={modal} alt={card.type} className="ImageGalleryItem-image" /> </li>)
                 }
             </ul>
-
-
         </>
     );
 };

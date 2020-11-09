@@ -32,7 +32,7 @@ class List extends Component {
                 images: [...prevState.images, ...result.hits],
                 pages: prevState.pages + 1,
             }))
-           
+
         } catch (error) {
             this.setState({
                 message: 'Some Eror, try later'
@@ -50,7 +50,7 @@ class List extends Component {
 
     }
     hendleSearchQuerySybmit = async search => {
-      await this.setState({ searchQuery: search, pages: 1, images: []})
+        await this.setState({ searchQuery: search, pages: 1, images: [] })
     }
     componentDidUpdate(prevProps, prevState) {
         const nextSerch = this.state.searchQuery;
@@ -67,14 +67,8 @@ class List extends Component {
             <>
                 <SearchForm onSubmit={this.hendleSearchQuerySybmit} />
                 {error && <h1>{message}</h1>}
-                {/* {!error && !loader && <ListItem key={images.id} images={images} />} */}
-                {/* {loader && <Loader  type="Bars" color="#00BFFF" height={100} width={100} timeout={15000} className="center" />}
-                {!error && !loader && <ListItem images={images} />} */}
                 {loader ? <LoaderSpinner /> : <ListItem images={images} />}
                 {images.length > 0 && <button type="button" onClick={this.featchImages}>Load More...</button>}
-                {/* {!error && !loader && <ListItem images={images} />} */}
-
-
             </>
         );
     }

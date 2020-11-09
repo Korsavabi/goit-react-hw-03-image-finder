@@ -28,8 +28,6 @@ class SearchForm extends Component {
                     <input
                         className="SearchForm-input"
                         type="text"
-                        // autofocus
-                        // autocomplete="on"
                         name='search'
                         value={search}
                         onChange={this.inputHandler}
