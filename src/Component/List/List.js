@@ -68,7 +68,7 @@ class List extends Component {
                 <SearchForm onSubmit={this.hendleSearchQuerySybmit} />
                 {error && <h1>{message}</h1>}
                 {loader ? <LoaderSpinner /> : <ListItem images={images} />}
-                {images.length > 0 && <button type="button" onClick={this.featchImages}>Load More...</button>}
+                {!!images.length && <button type="button" onClick={this.featchImages}>Load More...</button>}
             </>
         );
     }
